@@ -61,37 +61,59 @@ delay.h, gpio.h, stdulils.h
 <img width="715" height="366" alt="image" src="https://github.com/user-attachments/assets/512e671c-7d7e-4e65-8cef-cd005e526bcf" />
 
 # PROGRAM:
-```C
-#include <lpc17xx.h>
-#include "delay.h"       //User defined library which contains the delay routines
-#include "gpio.h"
 
-#define LED P1_29        // Led is connected to P1.29
+### ARDUINO PROGRAM
+```py
+void setup(){
+   pinMode(8,OUTPUT);
+}
 
-/* start the main program */
-int main()
-{
-    SystemInit();                          //Clock and PLL configuration
-    GPIO_PinFunction(LED,PINSEL_FUNC_0);   // Configure Pin for Gpio
-    GPIO_PinDirection(LED,OUTPUT);         // Configure the pin as OUTPUT
-    GPIO_PinWrite(LED,LOW);
+void loop(){
+   digitalWrite(8,HIGH);
+   delay(5000);
+   digitalWrite(8,LOW);
+   delay(1000);
+```
 
-    while(1)
-    {
-        /* Turn On all the leds and wait for 100ms */
-        GPIO_PinWrite(LED,HIGH);           // Make all the Port pin as high
-        DELAY_ms(100);
+### KEIL 
 
-        GPIO_PinWrite(LED,LOW);            // Make all the Port pin as low
-        DELAY_ms(100);
-    }
+```py
+#include <lpc17xx.h> 
+#include "delay.h" //User defined library which conatins the delay routines 
+#include "gpio.h" 
+#define LED P1_29 // Led is connected to P1.29 
+/* start the main program */ 
+int main() 
+{ 
+  SystemInit(); //Clock and PLL configuration 
+  GPIO_PinFunction(LED,PINSEL_FUNC_0); // Configure Pin for Gpio 
+  GPIO_PinDirection(LED,OUTPUT); // Configure the pin as OUTPUT 
+  GPIO_PinWrite(LED,LOW); 
+  while(1) 
+ { 
+   /* Turn On all the leds and wait for 100ms */ 
+   GPIO_PinWrite(LED,HIGH); // Make all the Port pin as high 
+   DELAY_ms(100); 
+ 
+   GPIO_PinWrite(LED,LOW); // Make all the Port pin as low 
+   DELAY_ms(100); 
+  } 
 }
 ```
+
  
 # Output:
 
-<img width="1280" height="960" alt="LED OP" src="https://github.com/user-attachments/assets/09fc9d14-32c9-4076-8e2e-8cb11fdc082a" />
+### ARDUINO PROGRAM
 
-# Result :
 
-Thus, a LED is interfaced and toggled with ARM LPC1768 Microprocessor.
+
+
+
+### KEIL 
+
+<img width="900" height="651" alt="image" src="https://github.com/user-attachments/assets/0b52d567-5ead-4b35-9899-5dc203d3a9de" />
+
+
+# Result:
+Thus a LED is interfaced with ARM LPC 1768 Microprocessor and its blinking was verified sucessfully.
