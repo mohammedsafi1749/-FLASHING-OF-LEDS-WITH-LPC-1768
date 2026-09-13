@@ -63,16 +63,19 @@ delay.h, gpio.h, stdulils.h
 # PROGRAM:
 
 ### ARDUINO PROGRAM
-```py
-void setup(){
-   pinMode(8,OUTPUT);
+```
+int ledPin=8; 
+void setup()
+{
+    pinMode(ledPin,OUTPUT);    
 }
-
-void loop(){
-   digitalWrite(8,HIGH);
-   delay(5000);
-   digitalWrite(8,LOW);
-   delay(1000);
+void loop()
+{  
+    digitalWrite(ledPin,HIGH);
+    delay(1000);               
+    digitalWrite(ledPin,LOW);  
+    delay(1000);               
+} 
 ```
 
 ### KEIL 
@@ -105,7 +108,6 @@ int main()
 # Output:
 
 ### ARDUINO PROGRAM
-
 
 
 
