@@ -114,8 +114,8 @@ int main()
 
 ### KEIL 
 
-<img width="900" height="651" alt="image" src="https://github.com/user-attachments/assets/0b52d567-5ead-4b35-9899-5dc203d3a9de" />
 
 
 # Result:
+
 Thus a LED is interfaced with ARM LPC 1768 Microprocessor and its blinking was verified sucessfully.
