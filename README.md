@@ -80,7 +80,7 @@ void loop()
 
 ### KEIL 
 
-```
+```c
 #include <lpc17xx.h>
 #include "delay.h"       
 #include "gpio.h"
